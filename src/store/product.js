@@ -1,24 +1,23 @@
-import axios from "@/services/api";
+import api from "@/services/api";
 
 export default {
   state: {
-    products: {},
-    isLoading: false,
+    products: [],
   },
-  getters: {},
+  getters: {
+    getProducts: (state) => state.products,
+  },
   mutations: {
-    updateProducts(state, payload) {
-      state.products = payload;
-    },
-    setIsLoading(state, payload) {
-      state.isLoading = payload;
+    setProducts(state, products) {
+      state.products = products;
     },
   },
   actions: {
-    async fetchProducts({ commit }) {
-      const products = await axios.get("/listing");
-      commit("updateProducts", products);
-      commit("setIsLoading", false);
+    async fetchProducts({ state, commit }) {
+      if (state.products?.length > 0) return;
+
+      const products = await api.get("/listing");
+      commit("setProducts", products.data);
     },
   },
   namespaced: true,

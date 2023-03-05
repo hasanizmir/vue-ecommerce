@@ -1,7 +1,7 @@
-import { default as productStore } from "./products";
-import { default as cartStore } from "./cart";
+import products from "./product";
+import cart from "./cart";
 
 export default {
-  productStore,
-  cartStore,
+  products,
+  cart,
 };
