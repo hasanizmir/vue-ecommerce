@@ -1,10 +1,10 @@
 <template>
   <div class="product">
-    <img :src="item.image" alt="product" width="200" />
+    <img :src="item.image" alt="product" width="150" />
     <p>{{ item.name }}</p>
     <div class="product__body">
       <span>{{ item.price }} {{ item.currency }}</span>
-      <button class="product__button">ADD BASKET</button>
+      <button class="product__button" @click="addToCart()">ADD BASKET</button>
     </div>
   </div>
 </template>
@@ -15,6 +15,12 @@ export default {
     item: {
       type: Object,
       required: true,
+    },
+  },
+  methods: {
+    addToCart() {
+      this.$store.dispatch('cart/addToCart', this.item)
+      this.$router.push({ path: "/cart" });
     },
   },
 };
@@ -45,7 +51,7 @@ export default {
   &__body {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
   }
 
