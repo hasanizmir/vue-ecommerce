@@ -9,12 +9,14 @@
   --padding-lg: 24px;
   --padding-xl: 32px;
 
-  --gap-2xs: 2px;
-  --gap-xs: 4px;
-  --gap-sm: 8px;
-  --gap-md: 16px;
-  --gap-lg: 24px;
-  --gap-xl: 32px;
+  --space-2xs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 72px;
 
   --font-size-xs: 0.75rem; // 12px
   --font-size-sm: 0.875rem; // 14px
@@ -41,6 +43,7 @@
   --color-success: #41b65b;
   --color-link: #2c3e50;
   --color-white: #fff;
+  --color-black: #000;
   --color-font: #3d3d3d;
 
   --container: 1200px;
@@ -61,7 +64,7 @@ nav {
   display: flex;
   justify-content: center;
   padding: var(--padding-lg);
-  gap: var(--gap-lg);
+  gap: var(--space-lg);
 
   a {
     font-weight: var(--font-weight-semibold);
@@ -69,6 +72,7 @@ nav {
 
     &.router-link-exact-active {
       color: var(--color-primary);
+      text-decoration: underline;
     }
   }
 }
