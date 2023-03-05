@@ -21,7 +21,7 @@
         <input class="cart-item__input" v-model="amount" />
         <button class="cart-item__button" @click="increase(data.id)">+</button>
       </div>
-      <span class="cart-item__remove"  @click="removeFromCart()">REMOVE</span>
+      <span class="cart-item__remove"  @click="removeItemFromCart(data)">REMOVE</span>
     </div>
   </div>
 </template>
@@ -46,7 +46,7 @@ export default {
     ...mapActions({
       incrementItem: 'cart/incrementItemQuantity',
       decrementItem: 'cart/decrementItemQuantity',
-      removeItem: 'cart/removeItem',
+      removeItemFromCart: 'cart/removeItemFromCart',
     }),
     increase() {
       this.amount += 1;
