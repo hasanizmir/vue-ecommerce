@@ -1,5 +1,7 @@
-# shopping-cart
+# Vue Shopping Cart App
+Frontend Engineer Challenge Project is a e-commerce Basket mini app.
 
+Demo: https://vue-cart-hasanizmir.vercel.app
 ## Project setup
 ```
 yarn install
